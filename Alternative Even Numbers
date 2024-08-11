@@ -10,14 +10,14 @@ class Main
           System.out.print("Invalid Inputs");
         }
         else{
-        int d=0;
-        for(int i=a+1;i<b;i++){
-          int c=i;
-          if(i%2==0){
-            if(c-4 == d || d==0){
-            System.out.print(i+" ");
-            d=i;
-            }
+            int d=0;
+            for(int i=a+1;i<b;i++){
+            int c=i;
+            if(i%2==0){
+                if(c-4 == d || d==0){
+                System.out.print(i+" ");
+                d=i;
+                }
           } 
           }
         }
