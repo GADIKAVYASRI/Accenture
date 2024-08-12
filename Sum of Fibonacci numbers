@@ -1,0 +1,29 @@
+import java.util.*;
+class Main
+{
+  
+    public static int fib(int n){
+      int a=0;
+      if(n==1) a=0;
+      if(n==2) a=1;
+      if(n>=3){
+        a= fib(n-1)+fib(n-2);
+      }
+      return a;
+    }
+    public static void main(String []args)
+    {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     int sum=0;
+     if(n<=0){
+       System.out.print("Invalid Input");
+     }
+     else{
+       for(int i=1;i<=n;i++){
+         sum+=fib(i);
+       }
+       System.out.print(sum);
+    }
+    }
+}
