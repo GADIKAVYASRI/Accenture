@@ -35,10 +35,15 @@ class Main
           System.out.print("Invalid Input");
         }
         else{
+        int count=0;
         for(int j=2;j<=n;j++){
         if(isPrime(j) && isFactor(j,n)){
           System.out.print(j+" ");
+          count++;
         }
+        }
+        if(count==0){
+          System.out.print("No Prime Factors");
         }
         }
     }
