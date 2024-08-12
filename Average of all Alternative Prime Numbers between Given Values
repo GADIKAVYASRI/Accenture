@@ -1,0 +1,54 @@
+import java.util.*;
+class Main
+{
+    public static void main(String []args)
+    {
+       Scanner sc=new Scanner(System.in);
+       int a=sc.nextInt();
+       int b=sc.nextInt();
+       boolean flag=false;
+       if(a>b){
+         int temp=b;
+         b=a;
+         a=temp;
+       }
+       if(a<=0 || b<=0){
+         System.out.print("Invalid Inputs");
+       }
+       else{
+        
+         int sum=0;
+         int c=0;
+         int num=0;
+         for(int i=a+1;i<b;i++){
+           for(int j=2;j<=i/2;j++){
+             if(i%j==0){
+               flag=true;
+               break;
+             }
+             flag=false;
+           }
+           if(flag==false && i!=1 ){
+          
+             if(c==0){   
+               sum+=i;
+               c=1;
+               num++;
+             }
+             else if(c==1){
+               c=0;
+             }
+           }
+         }
+         if(sum==0){
+            System.out.print("No Prime Numbers");
+         }
+         else{
+            double d=(double)sum/num;
+            String str=String.format("%.3f",d);
+            System.out.print(str);
+         }
+        
+       }
+    }
+}
