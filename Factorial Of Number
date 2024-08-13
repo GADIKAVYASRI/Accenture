@@ -1,0 +1,25 @@
+import java.util.*; 
+class Main
+{
+  
+    public static int fac(int num){
+      int a=0;
+      if(num==0) a=1;
+      if(num==1) a=1;
+      if(num>1){
+        a=num*fac(num-1);
+      }
+      return a;
+    }
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if(n<0){
+          System.out.print("Invalid InPut");
+        }
+        else{
+          System.out.print(fac(n));
+        }
+    }
+}
