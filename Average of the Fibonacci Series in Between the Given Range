@@ -1,0 +1,50 @@
+import java.util.*;
+class Main
+{
+  
+    public static int fib(int num){
+      int a=0;
+      if(num==1) a=0;
+      if(num==2) a=1;
+      if(num>=3){
+        a= fib(num-1)+fib(num-2);
+      }
+      return a;
+    }
+    public static void main(String []args)
+    {
+       Scanner sc=new Scanner(System.in);
+       int a=sc.nextInt();
+       int b=sc.nextInt();
+       if(a>b){
+         int c=b;
+         b=a;
+         a=c;
+       }
+       if(a<0 || b<0){
+         System.out.print("Invalid Inputs");
+       }
+       else{
+       int sum=0;
+       int c=0;
+       for(int i=1;i<=b;i++){
+         if(fib(i)>=a && fib(i)<=b){
+           sum+=fib(i);
+           c++;
+         }
+         if(fib(i)>b){
+           break;
+         }
+       }
+       if(c==0){
+         System.out.print("No Fibonacci Series Values");
+       }
+       else{
+       
+       double s=(double)sum/c;
+       String str=String.format("%.2f",s);
+       System.out.print(str);
+       }
+       }
+    }
+}
