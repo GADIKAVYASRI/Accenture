@@ -1,0 +1,53 @@
+import java.util.*;
+class Main
+{
+  public static boolean isPrime(int num){
+    boolean bool=true;
+    if(num==2){
+      bool=true;;
+    }
+    for(int i=2;i<num/2;i++){
+      if(num%i==0){
+        bool=false;
+        break;
+      }
+      bool=true;
+    }
+    return bool;
+  }
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		if(n<=3){
+		  System.out.print("Invalid ArRay Size.");
+		}
+		else{
+		int d1=0;
+		int a[]=new int[n];
+		int c=0;
+		for(int i=0;i<n;i++){
+		  a[i]=sc.nextInt();
+		  
+		}
+		for(int i=0;i<n;i++){
+		  if(a[i]<2){
+		    System.out.print("Invalid Array Elements");
+		    break;
+		  }
+		  else if(isPrime(a[i])){
+		    c+=a[i];
+		    d1++;
+		  }
+		}
+		if(c==0){
+		  System.out.print("No Prime Numbers!");
+		}
+		else{
+		double d=(double)c/d1;
+		String str=String.format("%.3f",d);
+		System.out.print("Average of Prime Numbers in a Given Array Elements is "+str+".");
+		}
+		}
+	}
+}
